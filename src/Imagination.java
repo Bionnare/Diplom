@@ -70,7 +70,7 @@ public class Imagination {
         neuronet.clearIm(); // обнуление счетчика очереди
 
         finder.stringFind(pixels, height, width); // основной метод запуска нейросети
-        // neuronet.preporation(image); // метод проверки нейросети одним символом
+        //neuronet.preporation(image); // метод проверки нейросети одним символом
         //neuronet.trainer(image); // метод обучение нейросети одним символом
 
          // сохранение строки-результата в буфер обмена

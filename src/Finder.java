@@ -113,7 +113,6 @@ public class Finder {
                         blur[i - 2][j - 2] = 1;
                         blur[i - 1][j + 2] = 1;
                         blur[i - 1][j - 2] = 1;
-
                     }
                     // условия приграничных пикселей
                     if (i == 0) {
@@ -128,7 +127,6 @@ public class Finder {
                             blur[i + 1][j + 1] = 1;
                         }
                     }
-
                     if (i == height - 1) {
                         blur[i][j] = 1;
                         blur[i - 1][j] = 1;
@@ -141,7 +139,6 @@ public class Finder {
                             blur[i - 1][j + 1] = 1;
                         }
                     }
-
                     if (j == 0) {
                         blur[i][j] = 1;
                         blur[i][j + 1] = 1;
@@ -206,7 +203,8 @@ public class Finder {
                     whiteString = false;
                     zoner(pix, height, width, i);
                     break;
-                } else {
+                }
+                else {
                     whiteString = true;
                 }
             }
@@ -330,46 +328,36 @@ public class Finder {
                 if (w <= upp) {
                     if (maxU < pix[w][q]) {
                         maxU = pix[w][q];
-
                     }
                     if (maxU_next < pix[w][q + 1]) {
                         maxU_next = pix[w][q + 1];
-
                     }
                     if (maxU_prev < pix[w][q - 1]) {
                         maxU_prev = pix[w][q - 1];
-
                     }
                 }
                 if ((w > upp) & (w < low)) {
                     if (maxM < pix[w][q]) {
                         maxM = pix[w][q];
-
                     }
                     if (maxM_next < pix[w][q + 1]) {
                         maxM_next = pix[w][q + 1];
-
                     }
                     if (maxM_prev < pix[w][q - 1]) {
                         maxM_prev = pix[w][q - 1];
-
                     }
                 }
                 if (w >= low) {
                     if (maxL < pix[w][q]) {
                         maxL = pix[w][q];
-
                     }
                     if (maxL_next < pix[w][q + 1]) {
                         maxL_next = pix[w][q + 1];
-
                     }
                     if (maxL_prev < pix[w][q - 1]) {
                         maxL_prev = pix[w][q - 1];
-
                     }
                 }
-
             }
             if ((maxU == maxU_next) | (maxM == maxM_next) | (maxL == maxL_next) | (maxU == maxU_prev) | (maxM == maxM_prev) | (maxL == maxL_prev)) {
                 bool1 = true; // если есть последовательные черные символы, то это ложная граница

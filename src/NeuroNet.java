@@ -45,7 +45,6 @@ public class NeuroNet<im> {
 
     // ЗАПИСЬ ЗНАЧЕНИЙ НЕЙРОНОВ
     public void preporation(BufferedImage image) throws IOException {
-
         image = resize(image, 28, 28); // изменяем размер изображения под стандарт
 
         // записываем пиксели в массив значений нейронов
@@ -66,15 +65,12 @@ public class NeuroNet<im> {
                 double blue = 1 - (double) rgb.getBlue() / 255;
                 double p = (red + green + blue) / 3; // получение среднего значения от всех оттенков цвета RGB
                 p = Math.round(p * 100) / 100.0; // преобразование числа до сотых после запятой
-
                 if (p < 0.4) { // обнуляем пиксели с малым значениями (чтобы не нагружать нейросеть т.к. при создании нового изображения фон получается равным не '0', а '0.39')
                     p = 0;
                 }
-
                 value[n] = p; // запись в массив текущих значений
                 in[n] = p; // запись в массив значений входного слоя
                 n++;
-
                 //fv.write(value[q] + lineSeparator); // запись значений нейронов в файлы
             }
         }
@@ -109,7 +105,6 @@ public class NeuroNet<im> {
         }
 
         //FileWriter fr = new FileWriter("C:/Users/user/Desktop/Diplom-master/Diplom-master/src/Data/value/result" + x + " " + sl + ".txt"); // запись текста в файл
-
         //System.out.println("РЕЗУЛЬТАТ!!!");
         for (int j = 0; j < sl; j++) { // заполнение массива выходного слоя
             //System.out.println(newValue[j]);
@@ -529,8 +524,7 @@ public class NeuroNet<im> {
                         10,11,15,9,4,15,9,14,0,14,1,14,4,14,3,14,2,14,5,14,7,14,8,14,6,
                         12,13,15,1,14,2,14,3,14,7,14,8,14,5,14,9,14,0,14,4,14,6,
                         12,13,15,4,14,8,14,0,14,1,14,5,14,2,14,3,14,6,14,9,14,7}; // [ "об16" ] обуч. выборка №20*/
-
-
+        
         String lineSeparator = System.getProperty("line.separator"); // переход на новую строку
         double mse = 0; // среднеквадратичная ошибка (уточняет правильность выполнение)
 

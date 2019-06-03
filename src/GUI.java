@@ -91,7 +91,6 @@ class GUI extends JFrame {
 
     private File chooseImage() {
         JFileChooser fileChooser = new JFileChooser();
-
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fileChooser.setMultiSelectionEnabled(false);
         fileChooser.setFileFilter(new FileNameExtensionFilter("images", "png"));
