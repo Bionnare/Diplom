@@ -96,7 +96,6 @@ public class Finder {
                         blur[i - 1][j - 1] = 1;
                         blur[i + 1][j - 1] = 1;
                         blur[i - 1][j + 1] = 1;
-
                         blur[i][j + 2] = 1;
                         blur[i][j - 2] = 1;
                         blur[i + 2][j] = 1;
